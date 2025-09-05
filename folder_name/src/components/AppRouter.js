@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Route, Routes, Navigate} from 'react-router-dom'
 import { privateRouotes, publicRoutes } from '../routes';
 import { CHAT_ROUTE, LOGIN_ROUTE } from '../utils/consts';
 import Login from './Login';
 import Chat from './Chat';
+import {useAuthState} from "react-firebase-hooks/auth"
+import { ContextFire } from '..';
 
 
 const AppRouter = () => {
-    const user = false
+    // const user = false // mock 
+    const {auth} = useContext(ContextFire)
+    const [user] = useAuthState(auth)
+
+
+    console.log('user', user)
+
 
     return  user ?  ( 
        

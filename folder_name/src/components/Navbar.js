@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,9 +7,13 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import {useAuthState} from "react-firebase-hooks/auth"
+import { ContextFire } from '..';
 
 const Navbar = () => {
-    const user = false
+    // const user = false
+    const {auth} = useContext(ContextFire)
+    const [user] = useAuthState(auth)
 
 
     return ( 
