@@ -22,7 +22,7 @@ const Navbar = () => {
   <Toolbar variant="dense" justify={"flex-end"} style={{justifyContent: "flex-end"}}>
         <Grid container  style={{justifyContent: "flex-end"}}>
             {user ? 
-            <Button variant={"outlined"} style={{color: "black", borderColor: "black" }} >Logout</Button>
+            <Button onClick={() => auth.signOut()} variant={"outlined"} style={{color: "black", borderColor: "black" }} >Logout</Button>
             :     
             <Button variant={"outlined"} style={{color: "black", borderColor: "black", marginRight: "5px"}} >Login</Button>
         }
