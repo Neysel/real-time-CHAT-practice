@@ -13,7 +13,7 @@ const AppRouter = () => {
        
         <Routes>
             {privateRouotes.map(({path, Component}) => 
-                <Route path={path} element={Component}/>
+                <Route key={path} path={path} element={Component}/>
             )}
             <Route path='*' element={<Chat/>} />
         </Routes>
@@ -21,7 +21,7 @@ const AppRouter = () => {
      ) : (
         <Routes>
             {publicRoutes.map(({path, Component}) => 
-                <Route path={path} element={Component}/>
+                <Route key={path} path={path} element={Component}/>
             )}
             <Route path='*' element={<Login/>} />
        </Routes>)
