@@ -7,6 +7,7 @@ import 'firebase/auth'
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+
 // // Import the functions you need from the SDKs you need
 // // TODO: Add SDKs for Firebase products that you want to use
 // // https://firebase.google.com/docs/web/setup#available-libraries
@@ -38,7 +39,7 @@ export const ContextFire = createContext(null)
 // Initialize Firebase
 const appFirebase = initializeApp(firebaseConfig);
 const auth = getAuth(appFirebase);
-const db = getFirestore(appFirebase);
+const firestore = getFirestore(appFirebase); // db
 
  
 
@@ -48,7 +49,7 @@ const db = getFirestore(appFirebase);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ContextFire.Provider value={{appFirebase, auth, db }}>
+  <ContextFire.Provider value={{auth, firestore }}>
       <App />
   </ContextFire.Provider>
   
