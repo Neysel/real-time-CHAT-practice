@@ -1,6 +1,6 @@
-### This is a simple chat that works with the help of Firebase 
+### This is a simple chat that works using Firebase 
 
-In the project directory, you need to go to folder_name and then: 
+In the project directory, you need to go to firebase_google_chat and then: 
 
 ### `npm start`
 
